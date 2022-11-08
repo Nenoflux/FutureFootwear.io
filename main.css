@@ -1,0 +1,167 @@
+* {
+	margin:0px;
+	padding:0px;
+	box-sizing: border-box;
+}
+
+.HeaderSlider img {
+	min-width: 100%;
+}
+
+body {
+	display: grid;
+	grid-template-columns:1fr 600px 600px 1fr;
+	margin: 0px;
+	padding: 0px;
+	grid-template-areas: 
+	". header header ."
+	 ". main main ."
+	". footer footer .";
+	font-family: sans-serif;
+}
+
+header {
+	/*height:35vh;*/
+	grid-area: header;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 60px 1fr 50px;
+	grid-template-areas: 
+	"nav"
+	"headerSlider"
+	"CTAContainer";
+}
+
+.nav {
+	grid-area: nav;
+	background-color:green;
+	/*height: 10vh;*/
+}
+
+.nav ul {
+	display: flex;
+	list-style-type:none;
+	height: 100%;
+	width:50%;
+	justify-content: space-around;
+	align-items: center;
+	margin-left: auto;
+}
+
+.nav ul li a {
+	color: white;
+	text-decoration: none;
+}
+
+.HeaderSlider {
+	grid-area: headerSlider;
+	height: 200px;
+	overflow: hidden;
+}
+
+.callToActionContainer {
+	display: grid;
+	grid-area: CTAContainer;
+	grid-template-columns: 1fr 1fr 100px 170px;
+	grid-template-areas: ". CTAtext CTABtn .";
+	background-color: green;
+	height: 50px;
+}
+
+.callToActionContainer p {
+	grid-area: CTAtext;
+	color: white;
+	background-color: green;
+	align-self: center;
+	text-align: center;
+	font-size: 18px;
+}
+
+.CTABtn {
+	grid-area: CTABtn;
+	height: 35px;
+	background-color: red;
+	color:white;
+	align-self: center;
+	border: 0px;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+content {
+	grid-area: main;
+	background-color: cyan;
+	display: grid;
+	grid-template-columns: 250px 1fr;
+	grid-template-areas: 
+	"Section info";
+}
+
+info {
+	grid-area: info;
+	margin-top: 10px;
+	margin-left: 20px;
+	margin-bottom: 10px;
+}
+
+.siteEvolutionContainer {
+	display: flex;
+	margin-right: 5px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	background-color: purple;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 5px; 
+	justify-content: space-around;
+}
+
+.Evolutionfigure {
+	width: 210px;
+	background-color: black;
+	color: white;
+	padding: 6px;
+	overflow: hidden;
+}
+
+section {
+	grid-area: Section;
+	background-color: magenta;
+}
+
+article {
+	grid-area: Article;
+	background-color: white;
+}
+
+footer {
+	grid-area: footer;
+	background-color: red;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-areas: 
+	"socialmedia copyright .";
+	}
+
+footer p {
+	color: white;
+	grid-area: copyright;
+	align-self: center;
+}
+
+.Social {
+	margin-top: 50px;
+	margin-left: 20px;
+	margin-bottom: 50px;
+}
+
+.Social ul {
+	grid-area:socialmedia;
+	list-style-type: none;
+	text-align: left;	
+}
+
+.Social ul li a{
+	color: white;
+	text-decoration: none;
+}
