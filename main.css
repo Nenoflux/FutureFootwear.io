@@ -1,167 +1,153 @@
-* {
-	margin:0px;
-	padding:0px;
-	box-sizing: border-box;
-}
-
-.HeaderSlider img {
-	min-width: 100%;
-}
-
+/* General Styles */
 body {
-	display: grid;
-	grid-template-columns:1fr 600px 600px 1fr;
-	margin: 0px;
-	padding: 0px;
-	grid-template-areas: 
-	". header header ."
-	 ". main main ."
-	". footer footer .";
-	font-family: sans-serif;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-header {
-	/*height:35vh;*/
-	grid-area: header;
-	display: grid;
-	grid-template-columns: 1fr;
-	grid-template-rows: 60px 1fr 50px;
-	grid-template-areas: 
-	"nav"
-	"headerSlider"
-	"CTAContainer";
+/* Landing Section Styles */
+.landing {
+    height: 100vh;
+    background: #f0f0f0 url("Assets/landing2.jpeg") no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: height 1s ease-in-out;
 }
 
-.nav {
-	grid-area: nav;
-	background-color:green;
-	/*height: 10vh;*/
+.landing-content {
+    text-align: center;
+    color: white;
+    place-content: center;
 }
 
-.nav ul {
-	display: flex;
-	list-style-type:none;
-	height: 100%;
-	width:50%;
-	justify-content: space-around;
-	align-items: center;
-	margin-left: auto;
+/* Catalog Section Styles */
+.catalog {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }
 
-.nav ul li a {
-	color: white;
-	text-decoration: none;
+.catalog-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 4em;
 }
 
-.HeaderSlider {
-	grid-area: headerSlider;
-	height: 200px;
-	overflow: hidden;
+.stage {
+    width: 100%;
+    max-width: 500px; /* Limit the width for better presentation */
+    overflow: hidden;
+    text-align: center; /* Center the buttons */
+    margin:3em;
 }
 
-.callToActionContainer {
-	display: grid;
-	grid-area: CTAContainer;
-	grid-template-columns: 1fr 1fr 100px 170px;
-	grid-template-areas: ". CTAtext CTABtn .";
-	background-color: green;
-	height: 50px;
+.slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth; /* Smooth scrolling */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
 }
 
-.callToActionContainer p {
-	grid-area: CTAtext;
-	color: white;
-	background-color: green;
-	align-self: center;
-	text-align: center;
-	font-size: 18px;
+.slide {
+    flex: 0 0 auto;
+    width: 250px;
+    margin: 0 10px;
+    border: 1px solid #ccc;
+    text-align: center;
 }
 
-.CTABtn {
-	grid-area: CTABtn;
-	height: 35px;
-	background-color: red;
-	color:white;
-	align-self: center;
-	border: 0px;
-	font-size: 14px;
-	font-weight: bold;
+.prev-btn,
+.next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1; /* Ensure buttons appear above slides */
 }
 
-content {
-	grid-area: main;
-	background-color: cyan;
-	display: grid;
-	grid-template-columns: 250px 1fr;
-	grid-template-areas: 
-	"Section info";
+.prev-btn {
+    left: 0;
 }
 
-info {
-	grid-area: info;
-	margin-top: 10px;
-	margin-left: 20px;
-	margin-bottom: 10px;
+.next-btn {
+    right: 0;
 }
 
-.siteEvolutionContainer {
-	display: flex;
-	margin-right: 5px;
-	margin-top: 10px;
-	margin-bottom: 10px;
-	background-color: purple;
-	padding-top: 5px;
-	padding-bottom: 5px;
-	padding-left: 5px; 
-	justify-content: space-around;
+.spec {
+    width: 100%;
+    text-align: center;
 }
 
-.Evolutionfigure {
-	width: 210px;
-	background-color: black;
-	color: white;
-	padding: 6px;
-	overflow: hidden;
+.spec h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
 }
 
-section {
-	grid-area: Section;
-	background-color: magenta;
+.spec p {
+    margin-bottom: 10px;
 }
 
-article {
-	grid-area: Article;
-	background-color: white;
+/* Cart Section Styles */
+.cart {
+    display: none; /* Initially hidden */
+    padding: 20px;
+    background-color: #f8f8f8;
+    margin-top: 20px;
 }
 
-footer {
-	grid-area: footer;
-	background-color: red;
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-template-areas: 
-	"socialmedia copyright .";
-	}
-
-footer p {
-	color: white;
-	grid-area: copyright;
-	align-self: center;
+.cart.show {
+    display: block;
 }
 
-.Social {
-	margin-top: 50px;
-	margin-left: 20px;
-	margin-bottom: 50px;
+.cart-items {
+    list-style: none;
+    padding: 0;
 }
 
-.Social ul {
-	grid-area:socialmedia;
-	list-style-type: none;
-	text-align: left;	
+.cart-items li {
+    margin-bottom: 10px;
 }
 
-.Social ul li a{
-	color: white;
-	text-decoration: none;
+.cart-items img {
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.checkout-buttons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Delivery and Payment Section Styles */
+.checkout-form {
+    display: none; /* Initially hidden */
+    padding: 20px;
+    background-color: #f8f8f8;
+    margin-top: 20px;
+}
+
+.payment-methods {
+    margin-top: 20px;
+}
+
+.method {
+    margin-bottom: 10px;
+}
+
+.credit-card-fields,
+.paypal-fields {
+    margin-top: 10px;
+}
+
+.hidden {
+    display: none;
 }
